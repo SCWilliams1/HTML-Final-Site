@@ -1,0 +1,172 @@
+<html>
+<head id = "head">
+	<script type = "text/javascript" src = "format.js"></script>
+	<script type="text/javascript" src="concentration.js"></script>
+</head>
+
+<body onload = "format('Masquerade Party | Memory game');">
+	<!--Universal header-->
+	<header id = "header"></header>
+	<nav id = "nav_list"></nav>
+	<div id = "container" class = "row">
+		<aside id = "game_list" class = "col"></aside>
+		<section class = "col" id = "game">
+			<p>
+			  Match the dice faces to win the game. Click the top row then try clicking the correct square in the bottom row.
+			  <br><br>
+			  <input id = "reset"type="button" value="Reset" onClick="window.location.reload()"style = "width:200; height: 50;">
+			  <br>
+			  <input id = "start" type="button"  value="Start" onclick = "setup()"; style = "width:200; height: 50;" />
+			  
+			</p>
+			
+			<p class="scoreAlign">Score = <span id="score">0</span></p>
+			<!--<h6 class="conCtr">Section A</h6> -->   
+			  <table id="conA" align = "center">
+				<tr>
+				  <td onclick = "getImageA('hide00', 'cell00')">
+					  <span id="cell00">&nbsp;</span>
+					</td>
+				  <td onclick = "getImageA('hide01', 'cell01')">
+					<span id = "cell01">&nbsp;</span>
+				  </td>
+				  <td onclick = "getImageA('hide02', 'cell02')">
+					<span id = "cell02">&nbsp;</span>
+					</td>
+				  <td onclick = "getImageA('hide03', 'cell03')">
+				  <span id = "cell03">&nbsp;</span>
+				  </td>
+				</tr>
+				<tr>
+				  <td onclick = "getImageA('hide04', 'cell04')">
+				  <span id = "cell04">&nbsp;</span>
+				  </td>
+				  <td onclick = "getImageA('hide05', 'cell05')">
+				  <span id = "cell05">&nbsp;</span>
+				  </td>
+				  <td onclick = "getImageA('hide06', 'cell06')">
+				  <span id = "cell06">&nbsp;</span>
+				  </td>
+				  <td onclick = "getImageA('hide07', 'cell07')">
+				  <span id = "cell07">&nbsp;</span>
+				  </td>
+				</tr>
+				<tr class = "hide">
+				  <td>
+					<span id="hide00"></span>
+					</td>
+				  <td>
+					<span id = "hide01"></span>
+				  </td>
+				  <td>
+					<span id = "hide02"></span>
+					</td>
+				  <td>
+				  <span id = "hide03"></span>
+				  </td>
+				</tr>
+				<tr class = "hide">
+				  <td>
+				  <span id = "hide04"></span>
+				  </td>
+				  <td>
+				  <span id = "hide05"></span>
+				  </td>
+				  <td>
+				  <span id = "hide06"></span>
+				  </td>
+				  <td>
+				  <span id = "hide07"></span>
+				  </td>
+				</tr>
+				</table>        
+			<!--<h6 class="conCtr">Section B</h6>-->
+			  <table id="conB" align = "center">
+				<tr>
+				  <td onclick="getImageB('hide10', 'match10', 'cell10')">
+				  <span id = "cell10">&nbsp;</span>
+				  </td>
+				  <td onclick = "getImageB('hide11', 'match11', 'cell11')">
+				  <span id = "cell11">&nbsp;</span>
+				  </td>
+				  <td onclick = "getImageB('hide12', 'match12', 'cell12')">
+				  <span id = "cell12">&nbsp;</span>
+				  </td>
+				  <td onclick = "getImageB('hide13', 'match13', 'cell13')">
+				  <span id = "cell13">&nbsp;</span>
+				  </td>
+				</tr>
+				<tr>
+				  <td onclick = "getImageB('hide14', 'match14', 'cell14')">
+				  <span id = "cell14">&nbsp;</span>
+				  </td>
+				  <td onclick = "getImageB('hide15', 'match15', 'cell15')">
+				  <span id = "cell15">&nbsp;</span>
+				  </td>
+				  <td onclick = "getImageB('hide16', 'match16', 'cell16')">
+				  <span id = "cell16">&nbsp;</span>
+				  </td>
+				  <td onclick = "getImageB('hide17', 'match17', 'cell17')">
+				  <span id = "cell17">&nbsp;</span>
+				  </td>
+				</tr>
+				<tr class = "hide">
+				  <td>
+				  <span id = "hide10"></span>
+				  </td>
+				  <td>
+				  <span id = "hide11"></span>
+				  </td>
+				  <td>
+				  <span id = "hide12"></span>
+				  </td>
+				  <td>
+				  <span id = "hide13"></span>
+				  </td>
+				</tr>
+				<tr class = "hide">
+				  <td>
+				  <span id = "hide14"></span>
+				  </td>
+				  <td>
+				  <span id = "hide15"></span>
+				  </td>
+				  <td>
+				  <span id = "hide16"></span>
+				  </td>
+				  <td>
+				  <span id = "hide17"></span>
+				  </td>
+				</tr>
+				<!---->
+				<tr class = "hide">
+				<td id="match00"></td>
+				<td id="match01"></td>
+				<td id="match02"></td>
+				<td id="match03"></td>
+				</tr>
+				<tr class = "hide">
+				<td id="match04"></td>
+				<td id="match05"></td>
+				<td id="match06"></td>
+				<td id="match07"></td>
+				</tr>
+				<tr class = "hide">
+				<td id="match10"></td>
+				<td id="match11"></td>
+				<td id="match12"></td>
+				<td id="match13"></td>
+				</tr>
+				<tr class = "hide">
+				<td id="match14"></td>
+				<td id="match15"></td>
+				<td id="match16"></td>
+				<td id="match17"></td>
+				</tr>
+			  </table>
+			  <div id="the_end">&nbsp;</div>
+		</section>
+	</div>
+	<footer id = "footer"></footer>
+</body>
+</html>

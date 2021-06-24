@@ -1,0 +1,110 @@
+<html>
+<head id = "head">
+	<script type = "text/javascript" src = "format.js"></script>
+	<script type = "text/javascript" src = "blackjack.js"></script>
+</head>
+
+<body onload = "format('Masquerade Party | Blackjack'); B_init();">
+	<!--Universal header-->
+	<header id = "header"></header>
+	<nav id = "nav_list"></nav>
+	<div id = "container" class = "row">
+		<aside id = "game_list" class = "col"></aside>
+		<section class = "col">
+			<table width = "85%" cellpadding="5" cellspacing="0" border = "0">
+			<tr>
+			</tr>
+			<tr>
+			   <td><span class="style1">Player Score: </span></td>
+			   <td><span class="style1">Dealer Score: </span></td>
+			</tr>
+			<tr>
+			  <td id = "playerhand"><span class="style1"> </span></td>
+			  <td id = "dealerhand"><span class="style1"> </span></td></tr>
+			  <tr><td colspan = 2><span class="style1">The winner is:</span></td></tr>
+			  <tr><td colspan = 2 id="winner" align = "center" class="style1">&nbsp;</td>
+			</tr>
+			<tr>
+			  <td><span class="style1">Player points: </span></td> 
+			  <td><span class="style1">Dealer points:</span></td></tr>  
+			  <tr><td class="style1" id = "Ppts">0</td> <td class="style1" id = "Dpts">0</td></tr>
+			<tr>
+			  <td><input type="button" id="battle" value="Play 21" onclick="blackjack_start()"; style = "width:200; height: 50;"/> </td>
+			  <td><input type="button" id="hitme" value="Hit me" onclick="game_loop()"; style = "width:200; height: 50;" disabled /> </td>
+			  <td><input type="button" id="bet" value="Final Wager" onclick="game_winner()"; style = "width:200; height: 50;" disabled /> </td>
+			</tr>
+        </table>
+		</section>
+	</div>
+	<footer id = "footer"></footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<html>
+<head>
+	<title>Greg's Gambits | Game of 21</title>
+	<link href="greg.css" rel="stylesheet" type="text/css" />
+	<script type = "text/javascript" src = "blackjack.js"></script>
+	<style type = "text/css"><!--.style1 {font-size: 18px}</style>
+</head>
+
+<body onload = "B_init();">
+<header>
+ <img src="images/superhero.jpg" />
+ <h1 align="center">Game of 21</h1>
+</header>
+<div style ="clear:both;"></div>  
+<nav>
+	<p><a href="index.html">Home</a>
+	<a href="#">About Greg</a>
+	<a href="play_games.html">Play a Game</a>
+	<a href="#">Sign In</a>
+	<a href="#">Contact Us</a>
+	<a href="aboutyou.html">Tell Greg About You</a></p>
+</nav>
+<main>
+    <section>
+        <table width = "85%" cellpadding="5" cellspacing="0" border = "0">
+			<tr>
+			</tr>
+			<tr>
+			   <td><span class="style1">Player Score: </span></td>
+			   <td><span class="style1">Dealer Score: </span></td>
+			</tr>
+			<tr>
+			  <td id = "playerhand"><span class="style1"> </span></td>
+			  <td id = "dealerhand"><span class="style1"> </span></td></tr>
+			  <tr><td colspan = 2><span class="style1">The winner is:</span></td></tr>
+			  <tr><td colspan = 2 id="winner" align = "center" class="style1">&nbsp;</td>
+			</tr>
+			<tr>
+			  <td><span class="style1">Player points: </span></td> 
+			  <td><span class="style1">Dealer points:</span></td></tr>  
+			  <tr><td class="style1" id = "Ppts">0</td> <td class="style1" id = "Dpts">0</td></tr>
+			<tr>
+			  <td><input type="button" id="battle" value="Play 21" onclick="blackjack_start()"; /> </td>
+			  <td><input type="button" id="hitme" value="Hit me" onclick="game_loop()"; disabled /> </td>
+			  <td><input type="button" id="bet" value="Final Wager" onclick="game_winner()"; disabled /> </td>
+			</tr>
+        </table>
+   </section>
+</main>
+<footer>Copyright &copy; 2019 Greg's Gambits<br />
+<a href="mailto:yourfirstname@yourlastname.com">yourfirstname@yourlastname.com</a>
+</footer>
+</body>
+</html>-->

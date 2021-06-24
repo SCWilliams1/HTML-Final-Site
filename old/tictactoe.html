@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Greg's Gambits | Tic Tac Toe</title>
+	<link href="greg.css" rel="stylesheet" type="text/css" />
+	<script>/*Functions*/
+		function game(){
+			turn = -1;
+			ttt[3][3];
+			for(var i = 0; i < 3; i++){
+				for(var j = 0; j < 3; j++){
+					ttt[i,j] = -4;
+				}
+			}
+			return;
+		}
+		function compare(){
+			var arg[arguments.length];
+			for (var i = 0; i < arguments.length; i++) {
+				arg[i] = arguments[i];
+			}
+			
+			for(var j = 0; j < arguments.length; j++){
+				if(arg[Math.max(0,j-1)] != arg[j]){
+					return false;
+				}
+			}
+			/*compares all the values, if they are not all the same value it returns false. If they are all the same value it returns true*/
+			/*no need for validation since the user cannot directly input into the function*/
+			return true;
+		}
+
+		function win_condition(){
+			//[1][2][3]
+			//[4][5][6]
+			//[7][8][9]
+			var _w = -1;
+			
+			//row column check
+			for(var i = 0;i < 3;i++){
+				if(compare(ttt[i,0],ttt[i,1],ttt[i,2])){_w = ttt[i,0];}//rows
+				if(compare(ttt[0,i],ttt[1,i],ttt[2,i])){_w = ttt[0,i];}//columns
+				if(compare(ttt[0,0],ttt[1,1],ttt[2,2])){_w = ttt[1,1];}//Diag 1
+				if(compare(ttt[0,2],ttt[1,1],ttt[2,0])){_w = ttt[1,1];}//Diag 2
+			}
+			
+			_w = _w.charCodeAt(0);
+			if(_w > 0){//win game
+				str = "";
+				if(_w == 88){
+					str = "X";
+				}else{
+					str = "O";
+				}
+				alert ("You win Player " + str + "!");
+				history.go(0);
+			}
+			return;
+		}
+
+		function turn_select(){turn = -turn;return;}
+		function change(num){
+			var ox;
+			b = Math.floor((num-1)/3);
+			c = (num-1)%3;
+			var d = ttt[b][c];	
+			
+			if(d = -4){
+				d = (turn == 1) *0 + (turn == -1) * 1;
+				if(turn > 0){
+					ox = "O";
+				}else{
+					ox = "X";
+				}
+			}else{
+				if (d == 0){ox = "O";}
+				if (d == 1){ox = "X";}
+			}
+			
+			return ox; 
+		}
+		function change(form,num){
+		    alert ("You win Player !");
+			var xo = change(num);
+			
+			if(num = 1){form.a1.value = xo;}
+			if(num = 2){form.a2.value = xo;}
+			if(num = 3){form.a3.value = xo;}
+			if(num = 4){form.a4.value = xo;}
+			if(num = 5){form.a5.value = xo;}
+			if(num = 6){form.a6.value = xo;}
+			if(num = 7){form.a7.value = xo;}
+			if(num = 8){form.a8.value = xo;}
+			if(num = 9){form.a9.value = xo;}
+			
+			win_condition();
+			turn_select();
+		}
+    </script>
+	<script>/*Game Start*/
+		game();
+	</script>
+</head>
+
+<body>
+    <header>
+        <p>&nbsp;</p>
+        <img src="images/superhero.jpg" />
+        <h1 align="center"><em>Tic Tac Toe</em></h1>
+        <h1 align="center"><em>&nbsp;</em></h1>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>    
+    </header>
+    <nav>
+	  <p><a href="index.html">Home</a>
+	  <a href="#">About Greg</a>
+	  <a href="play_games.html">Play a Game</a>
+	  <a href="#">Sign In</a>
+	  <a href="#">Contact Us</a>
+	  <a href="aboutyou.html">Tell Greg About You</a></p>
+    </nav>
+<main>
+	<FORM>
+		<table>
+			<tr><td><input type = "button" name = "a1" value = ""	onClick = change(this.form,1)>  
+				<td><input type = "button" name = "a2" value = ""	onClick = change(this.form,2)> 
+				<td><input type = "button" name = "a3" value = ""	onClick = change(this.form,3)> 
+			<tr><td><input type = "button" name = "a4" value = ""	onClick = change(this.form,4)> 
+				<td><input type = "button" name = "a5" value = ""	onClick = change(this.form,5)> 
+				<td><input type = "button" name = "a6" value = ""	onClick = change(this.form,6)> 
+			<tr><td><input type = "button" name = "a7" value = ""	onClick = change(this.form,7)> 
+				<td><input type = "button" name = "a8" value = ""	onClick = change(this.form,8)>   
+				<td><input type = "button" name = "a9" value = ""   onClick = change(this.form,9)> 
+		</table>
+	</FORM>
+	<br><br>
+
+	<INPUT TYPE="button" VALUE="New Game" onClick="history.go(0)">
+</main>
+<footer>
+    Copyright &copy; 2019 Greg's Gambits<br />
+    <a href="mailto:yourfirstname@yourlastname.com">yourfirstname@yourlastname.com</a>
+</footer>
+</body>
+</html>

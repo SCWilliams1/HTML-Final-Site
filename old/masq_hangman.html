@@ -1,0 +1,22 @@
+<html>
+<head id = "head">
+	<script type = "text/javascript" src = "format.js"></script>
+	<script type="text/javascript" src="hangman.js"></script>
+</head>
+
+<body onload = "format('Masquerade Party | Hangman');">
+	<!--Universal header-->
+	<header id = "header"></header>
+	<nav id = "nav_list"></nav>
+	<div id = "container" class = "row">
+		<aside id = "game_list" class = "col"></aside>
+		<section class = "col">
+		    <p><input type="button" value = "Start the game" onclick="startHangman();" style = "width:200; height: 50;"/></p>
+			<div id = "noose" class = "floatright"> <img src ="images/hangman10.gif" style = "width:200;"/></div>
+			<div id = "game"><p>&nbsp;</p></div> <div id = "result"><p>&nbsp;</p></div>
+			<p><input type="button" value = "GUESS" onclick="wordGuess();" style = "width:200; height: 50;" /></p>
+		</section>
+	</div>
+	<footer id = "footer"></footer>
+</body>
+</html>
